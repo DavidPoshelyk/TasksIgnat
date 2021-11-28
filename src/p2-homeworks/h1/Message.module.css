@@ -1,0 +1,51 @@
+.global{
+    display: grid;
+    width: 400px;
+    grid-template-columns: 115px minmax(10px,auto) 40px;
+    grid-template-rows: 20px minmax(10px,  107px);
+    grid-template-areas:
+"a n n"
+"a m t"
+
+}
+
+.avatar{
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background-color: #174444;
+    grid-area: a;
+
+}
+.avatar img{
+    border-bottom-right-radius: 70px;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    width: 115px;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-bottom: 0px;
+
+
+
+}
+.message{
+    padding-left: 10px;
+    padding-top: 10px;
+    grid-area: m;
+    background-color: #174444;
+}
+.name{
+    padding-left: 10px;
+    grid-area: n;
+    background-color: #174444;
+
+    border-top-right-radius: 10px;
+}
+.time{
+    grid-area: t;
+    background-color: #174444;
+    padding-top: 70px;
+    border-bottom-right-radius: 10px;
+
+
+}
