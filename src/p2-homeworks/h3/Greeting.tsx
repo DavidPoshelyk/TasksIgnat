@@ -1,26 +1,34 @@
-import React from 'react'
+import React, {ChangeEvent, KeyboardEvent} from 'react'
 import s from './Greeting.module.css'
 
+
 type GreetingPropsType = {
-    name: any // need to fix any
-    setNameCallback: any // need to fix any
-    addUser: any // need to fix any
-    error: any // need to fix any
-    totalUsers: any // need to fix any
+    name: string // need to fix any
+    setNameCallback: (e: ChangeEvent<HTMLInputElement>) => void // need to fix any
+    addUser: () => void // need to fix any
+    error: string // need to fix any
+    totalUsers: number // need to fix any
 }
 
 // презентационная компонента (для верстальщика)
-const Greeting= ({name, setNameCallback, addUser, error, totalUsers}:GreetingPropsType) => {
+const Greeting = ({name, setNameCallback, addUser, error, totalUsers}: GreetingPropsType) => {
+    let New = name.charAt(0).toUpperCase() + name.slice(1)
 
-    let inputClass =  name.length <= 3 ?  s.error: s.add
-     // need to fix with (?:)
+    let inputClass = (New.length <= 2 ? s.error : s.add)
+    const onKeyPress = (e: KeyboardEvent<HTMLDivElement>) => {
+        if (e.code === "Enter") {
+            addUser()
+        }
+    }
+
 
     return (
-        <div>
-            <input value={name} onChange={setNameCallback} className={inputClass}/>
-            <span>{error}</span>
+        <div onKeyPress={onKeyPress}>
+            <input value={New} onChange={setNameCallback} className={inputClass}/>
             <button onClick={addUser}>add</button>
             <span>{totalUsers}</span>
+
+            <div>{error}</div>
         </div>
     )
 }

@@ -1,9 +1,10 @@
 import React, {ChangeEvent, useState} from 'react'
 import Greeting from './Greeting'
+import {UserType} from "./HW3";
 
 type GreetingContainerPropsType = {
-    users: any // need to fix any
-    addUserCallback: any // need to fix any
+    users: Array<UserType> // need to fix any
+    addUserCallback: (name: string) => void // need to fix any
 }
 
 // более простой и понятный для новичков
@@ -11,25 +12,27 @@ type GreetingContainerPropsType = {
 
 // более современный и удобный для про :)
 // уровень локальной логики
-const GreetingContainer= ({users, addUserCallback}:GreetingContainerPropsType) => { // деструктуризация пропсов
+const GreetingContainer = ({users, addUserCallback}: GreetingContainerPropsType) => { // деструктуризация пропсов
     const [name, setName] = useState<any>('') // need to fix any
     const [error, setError] = useState<any>('') // need to fix any
 
     const setNameCallback = (e: ChangeEvent<HTMLInputElement>) => {
-        setName(e.currentTarget.value)
-        // setName('')
+        let arr_en = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', ''];
+        const value = e.currentTarget.value
+        if (arr_en.includes(value.slice(-1).toLowerCase())) {
+            setError('')
+            setName(value)
+        }
     }
 
     const addUser = () => {
-
-        if(name.length <= 4){
+        if (name.length <= 2) {
             setError('error')
-
-        } else { setError('')
+        } else {
             alert(`Hello ${name} ! `)
             addUserCallback(name)
-        setName('')
-        }// need to fix
+            setName('')
+        }
     }
 
     const totalUsers = users.length // need to fix
