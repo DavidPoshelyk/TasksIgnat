@@ -1,7 +1,8 @@
 .global{
+    margin-top: 20px;
     display: grid;
     width: 400px;
-    grid-template-columns: 115px minmax(10px,auto) 40px;
+    grid-template-columns: 115px minmax(10px,auto) 50px;
     grid-template-rows: 20px minmax(10px,  107px);
     grid-template-areas:
 "a n n"
@@ -46,6 +47,7 @@
     background-color: #174444;
     padding-top: 70px;
     border-bottom-right-radius: 10px;
+
 
 
 }
