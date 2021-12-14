@@ -26,6 +26,7 @@ function HW4() {
 
             <div className={s.column}>
                 <SuperInputText
+                    className={s.input}
                     value={text}
                     onChangeText={setText}
                     onEnter={showAlert}
@@ -34,23 +35,24 @@ function HW4() {
                 />
 
                 <SuperInputText
-                    className={s.blue}// проверьте, рабоет ли смешивание классов
+                    className={s.input}// проверьте, рабоет ли смешивание классов
                 />
 
                 {/*----------------------------------------------------*/}
 
-                <SuperButton>
+                <SuperButton  className={s.button} >
                     default
                 </SuperButton>
 
                 <SuperButton
                     red // пропсу с булевым значением не обязательно указывать true
                     onClick={showAlert}
+                    className={s.buttondelete}
                 >
                     delete {/*// название кнопки попадёт в children*/}
                 </SuperButton>
 
-                <SuperButton disabled>
+                <SuperButton disabled className={s.buttondisable}>
                     disabled
                 </SuperButton>
 
@@ -61,11 +63,11 @@ function HW4() {
                     onChangeChecked={setChecked}
                     className={s.check}
                 >
-                    {" этот текст попадёт в children"}
+
                 </SuperCheckbox>
 
                 {/*// onChange тоже должен работать*/}
-                <SuperCheckbox checked={checked} onChange={testOnChange}/>
+                <SuperCheckbox   checked={checked} onChange={testOnChange}/>
             </div>
 
             <hr/>

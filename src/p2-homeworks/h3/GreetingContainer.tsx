@@ -27,6 +27,7 @@ const GreetingContainer = ({users, addUserCallback}: GreetingContainerPropsType)
 
     const addUser = () => {
         if (name.length <= 2) {
+            setName('')
             setError('error')
         } else {
             alert(`Hello ${name} ! `)
