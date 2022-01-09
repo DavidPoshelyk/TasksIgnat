@@ -2,6 +2,7 @@ import React from 'react'
 import PreJunior from "./pages/PreJunior";
 import {Routes, Route} from 'react-router-dom'
 import Error404 from "./pages/Error404";
+import Junior from "./pages/Junior";
 
 export const PATH = {
     PRE_JUNIOR: '/pre-junior',
@@ -20,7 +21,7 @@ function Routes2() {
 
 
             <Route path={PATH.PRE_JUNIOR} element={<PreJunior/>}/>
-            <Route path={PATH.JUNIOR} element={<div>JUNIOR</div>}/>
+            <Route path={PATH.JUNIOR} element={<Junior/>}/>
             <Route path={PATH.JUNIOR_PLUS} element={<div>JUNIOR_PLUS</div>}/>
             <Route path={'/*'} element={<Error404/>}  />
 
