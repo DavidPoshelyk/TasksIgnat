@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {homeWorkReducer} from './bll/homeWorkReducer'
+import {homeWorkReducer, stateType} from './bll/homeWorkReducer'
 import SuperButton from '../h4/common/c2-SuperButton/SuperButton'
 
 
@@ -14,9 +14,8 @@ import SuperButton from '../h4/common/c2-SuperButton/SuperButton'
 ]
 
 function HW8() {
-    const [people, setPeople] = useState<Array<{_id:number, name:string, age:number}>>(initialPeople) // need to fix any
+    const [people, setPeople] = useState<Array<stateType>>(initialPeople) // need to fix any
 
-    // need to fix any
     const finalPeople = people.map(p => (
         <div key={p._id}>
             <span>{p.name} </span>
@@ -30,7 +29,7 @@ function HW8() {
     return (
         <div>
             <hr/>
-            homeworks 8
+            <b> homeworks 8 </b>
 
             {/*should work (должно работать)*/}
             {finalPeople}

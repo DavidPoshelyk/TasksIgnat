@@ -1,12 +1,12 @@
 
-
-export const homeWorkReducer = (state: Array<{_id:number, name:string, age:number}> , action:{type:string}):  Array<{_id:number, name:string, age:number}>  => {
+ export type stateType = {_id:number, name:string, age:number}
+export const homeWorkReducer = (state: Array<stateType> , action:{type:string}):  Array<stateType>  => {
     switch (action.type) {
         case 'UP': {
-           return  [...state].sort((a:{_id:number, name:string, age:number}, b:{_id:number, name:string, age:number})=> a.name.localeCompare(b.name))
+           return  [...state].sort((a:stateType, b:stateType)=> a.name.localeCompare(b.name))
         }
         case 'DOWN': {
-            return  [...state].sort((a:{_id:number, name:string, age:number}, b:{_id:number, name:string, age:number})=> b.name.localeCompare(a.name))
+            return  [...state].sort((a:stateType, b:stateType)=> b.name.localeCompare(a.name))
 
         }
         case 'AGE18': {
