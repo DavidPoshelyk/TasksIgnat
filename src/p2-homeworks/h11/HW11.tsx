@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import SuperRange from './common/c7-SuperRange/SuperRange'
-import SuperDoubleRange from './common/c8-SuperDoubleRange/SuperDoubleRange'
+import MultiRangeSlider from "./common/c8-SuperDoubleRange/SuperDoubleRange";
 
 function HW11() {
     const [value1, setValue1] = useState(0)
@@ -15,15 +15,18 @@ function HW11() {
             <div>
                 <span>{value1}</span>
                 <SuperRange
+                    onChangeRange={(arr)=>setValue1(arr) }
                     // сделать так чтоб value1 изменялось
                 />
             </div>
 
             <div>
-                <span>{value1}</span>
-                <SuperDoubleRange
-                    // сделать так чтоб value1 и value2 изменялось
-                />
+                <MultiRangeSlider min={0}
+                                  max={1000}
+                                  onChange={({ min, max }: { min: number; max: number }) =>
+                                      setValue2(max-min)
+                                      // console.log(`min = ${min}, max = ${max}`)
+                                  }/>
                 <span>{value2}</span>
             </div>
 
