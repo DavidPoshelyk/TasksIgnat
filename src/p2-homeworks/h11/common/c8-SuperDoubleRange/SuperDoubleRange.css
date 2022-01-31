@@ -1,10 +1,9 @@
 .container {
     padding: 20px;
-
     /*height: 100vh;*/
-    /*display: flex;*/
-    /*align-items: center;*/
-    /*justify-content: center;*/
+    display: flex;
+    align-items:center ;
+    justify-content: center;
 }
 
 .slider {
@@ -32,7 +31,7 @@
 }
 
 .slider__range {
-    background-color: #9fe5e1;
+    background-color: #2e2970;
     z-index: 2;
 }
 

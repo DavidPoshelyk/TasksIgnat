@@ -20,6 +20,8 @@ function HW11() {
                     // сделать так чтоб value1 изменялось
                 />
             </div>
+            <hr/>
+            <hr/>
 
             <div>
                 <MultiRangeSlider min={0}
