@@ -23,7 +23,7 @@ function HW12() {
                    onChangeCallback(e.currentTarget.value)
                }}>
                    {themes.map(m=> {
-                       return <option className={s[theme == m ? theme +'-text':'']} value={m}> {m} </option>
+                       return <option value={m}> {m} </option>
                    })}
                </select>
             </span>
