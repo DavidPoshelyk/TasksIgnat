@@ -4,7 +4,8 @@ import MultiRangeSlider from "./common/c8-SuperDoubleRange/SuperDoubleRange";
 
 function HW11() {
     const [value1, setValue1] = useState(0)
-    const [value2, setValue2] = useState(100)
+    const [min, setMin] = useState(100)
+    const [max, setMax] = useState(100)
 
     return (
         <div>
@@ -23,11 +24,13 @@ function HW11() {
             <div>
                 <MultiRangeSlider min={0}
                                   max={1000}
-                                  onChange={({ min, max }: { min: number; max: number }) =>
-                                      setValue2(max-min)
+                                  onChange={({ min, max }: { min: number; max: number }) => {
+                                      setMin(min)
+                                      setMax(max)
                                       // console.log(`min = ${min}, max = ${max}`)
-                                  }/>
-                <span>{value2}</span>
+                                  }}/>
+                <div style={{fontSize:'20px'}}>Min: {min}</div>
+                <div style={{fontSize:'20px'}}>Max: {max}</div>
             </div>
 
             <hr/>
